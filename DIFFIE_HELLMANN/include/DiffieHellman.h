@@ -1,5 +1,5 @@
 // include/DiffieHellman.h
-#pragma once
+#pragma once //Includes the file only once during compilation
 #include "BigInt.h"
 
 class DiffieHellman {
@@ -12,9 +12,12 @@ private:
 
 public:
     DiffieHellman(BigInt prime, BigInt generator);
-    
+    //Generates private and public keys
     void generateKeys();
-    BigInt getPublicKey() const;
+    //Returns public key to be sent to other party
+    BigInt PublicKey() const;
+    //Computes shared secret using other party's public key and their own private key
     void computeSharedSecret(BigInt otherPublicKey);
+    //Returns computed shared key
     BigInt getSharedSecret() const;
 };

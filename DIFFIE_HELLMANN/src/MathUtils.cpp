@@ -85,13 +85,17 @@ bool MathUtils::isPrime(BigInt n, int k) {
 // --- PRIME GENERATION ---
 BigInt MathUtils::generatePrime(int bitLength) {
     BigInt candidate;
-    while (true) {
+    bool PrimeFound = false;
+    while (PrimeFound == false) {
         candidate = generateRandomBigInt(bitLength);
         // Make sure it's odd
-        if (candidate % 2 == 0) candidate += 1; 
+        if (candidate % 2 == 0) {
+            candidate += 1;
+        } 
         
-        if (isPrime(candidate)) {
-            return candidate;
+        if (isPrime(candidate)==true) {
+            PrimeFound = true;
         }
+        return candidate;
     }
 }

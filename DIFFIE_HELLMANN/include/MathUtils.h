@@ -4,7 +4,7 @@
 
 class MathUtils {
 public:
-    // Calculates (base^exp) % mod quickly using Square-and-Multiply
+    // Calculates (base^exp) % mod quickly using Square-and-Multiply Algorithm
     static BigInt modExp(BigInt base, BigInt exp, BigInt mod);
 
     // Probabilistic primality test (Miller-Rabin)

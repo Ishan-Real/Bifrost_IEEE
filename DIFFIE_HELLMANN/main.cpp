@@ -26,13 +26,13 @@ int main() {
 
     // 4. Exchange Public Keys & Compute Shared Secret
     std::cout << "Swapping public keys over the 'network'...\n";
-    alice.computeSharedSecret(bob.getPublicKey());
-    bob.computeSharedSecret(alice.getPublicKey());
+    alice.computeSharedSecret(bob.PublicKey());
+    bob.computeSharedSecret(alice.PublicKey());
 
     // 5. Verify the math works
     std::cout << "\n--- Final Results ---\n";
-    std::cout << "Alice's Shared Secret: \n" << alice.getSharedSecret() << "\n\n";
-    std::cout << "Bob's Shared Secret: \n" << bob.getSharedSecret() << "\n\n";
+    std::cout << "Alice's Shared Secret: \n" << alice.getSharedSecret() << "\n";
+    std::cout << "Bob's Shared Secret: \n" << bob.getSharedSecret() << "\n";
 
     if (alice.getSharedSecret() == bob.getSharedSecret()) {
         std::cout << "SUCCESS! Both parties share the exact same secret key.\n";
