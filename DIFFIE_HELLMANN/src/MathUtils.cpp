@@ -96,6 +96,6 @@ BigInt MathUtils::generatePrime(int bitLength) {
         if (isPrime(candidate)==true) {
             PrimeFound = true;
         }
-        return candidate;
     }
+    return candidate;
 }
